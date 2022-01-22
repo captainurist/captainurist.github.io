@@ -5,7 +5,7 @@ title: Using std::format with Qt
 
 C++20 has rolled, with a lot of cool and exciting features, but if you're from the Qt gang (or really any other over-10M-locs-codebase gang), then you likely have a lot of your own half-baked solutions for the problems that C++20 tries to solve.
 
-Qt had string formatting since forever, but unfortunately it's far from perfect, and there is no easy way to fix it. Breaking the API is not really an option when what you want to change is a vocabulary type that's literally used by ~million devs worldwide [^1]. Imagine trying to fix `std::string::substr` to return `std::string_view`. Yeah, not in this timeline.
+Qt had string formatting since forever, but unfortunately it's far from perfect, and there is no easy way to fix it. Breaking the API is not really an option when what you want to change is a vocabulary type that's literally used by ~million devs worldwide <sup>[^1]</sup>. Imagine trying to fix `std::string::substr` to return `std::string_view`. Yeah, not in this timeline.
 
 What exactly is wrong with `QString` formatting you ask? See for yourself:
 
@@ -84,7 +84,7 @@ You can check out the complete code [on my github](https://github.com/captainuri
 
 The implementation that I have also has support for `QByteArray`s, and efficiently converts between utf8 and utf16 when needed. The latter part required hooking into Qt internals, so you might run into linker errors if you’re not linking with Qt statically. In this case you can either mark the needed functions in `qstringconverter_p.h` with `Q_CORE_EXPORT` and rebuild Qt, or just reimplement the conversions yourself using less efficient public APIs.
 
-
+---
 
 [^1]:  I’m not lying [about the 1 million](https://www.qt.io/stock/qt-group-oyj-managers-transactions-1491998400000).
 

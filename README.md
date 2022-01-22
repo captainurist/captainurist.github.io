@@ -1,3 +1,3 @@
 # Captain Urist Blog
 
-Go read the blog, not the readme file!
+Go read [the blog](https://captainurist.github.io/), not the readme file!

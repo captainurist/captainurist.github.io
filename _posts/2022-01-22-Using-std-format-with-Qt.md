@@ -51,7 +51,7 @@ So far so good. But we want more.
 
 ### Formatting via QDebug
 
-It could be nice if we could format any Qt type that provides an output operator into a `QDebug`. And it’s actually pretty straightforward to do:
+It would be nice if we could format any Qt type that provides an output operator into a `QDebug`. And it’s actually pretty straightforward to do:
 
 {% gist 7205097f993936d22115c53b9799c688 %}
 
@@ -84,9 +84,9 @@ You can check out the complete code [on my github](https://github.com/captainuri
 
 The implementation that I have also has support for `QByteArray`s, and efficiently converts between utf8 and utf16 when needed. The latter part required hooking into Qt internals, so you might run into linker errors if you’re not linking with Qt statically. In this case you can either mark the needed functions in `qstringconverter_p.h` with `Q_CORE_EXPORT` and rebuild Qt, or just reimplement the conversions yourself using less efficient public APIs.
 
-\ 
+&nbsp;
 
-\ 
+&nbsp;
 
 ---
 
